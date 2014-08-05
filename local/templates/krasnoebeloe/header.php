@@ -12,23 +12,26 @@ IncludeTemplateLangFile(__FILE__);?>
 <head>
 <meta charset="utf-8">
 
-    <title>title</title>
+    <title><? $APPLICATION->ShowTitle(false); ?></title>
     <?$APPLICATION->ShowHead();?>
     <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-<link href="<?=SITE_TEMPLATE_PATH?>/css/reset.css" rel="stylesheet" />
-<link href="<?=SITE_TEMPLATE_PATH?>/css/template_styles.css?1" rel="stylesheet" />
-<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-1.8.2.min.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/script.js"></script>
-	<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.customfile.js"></script>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/reset.css'); ?>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/template_styles.css'); ?>
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery-1.8.2.min.js'); ?>
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/script.js'); ?>
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.customfile.js'); ?>
+    <? $APPLICATION->SetAdditionalCSS('http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic'); ?>
+
+    <?$APPLICATION->ShowMeta("keywords")?>
+    <?$APPLICATION->ShowMeta("description")?>
 <script>
 $(document).ready(function() {
     $('.input-file').customFile();
 });
 </script>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.carouFredSel-6.2.1-packed.js'); ?>
 
 
 		<script type="text/javascript" language="javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>

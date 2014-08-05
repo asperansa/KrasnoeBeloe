@@ -28,7 +28,7 @@
 	right: 0;
 	height: 100%;
 	width:30px;
-	background:url(../img/sel-str.png) 50% 50% no-repeat;
+	background:url(../images/sel-str.png) 50% 50% no-repeat;
 }
 
 .cuselText { 
@@ -75,7 +75,7 @@
 */
 .classDisCusel,
 .classDisCusel .cuselFrameRight {
-	background-image: url(../img/selects-2-dis.png) !important;
+	background-image: url(../images/selects-2-dis.png) !important;
 	cursor: default;
 	color: #ccc;
 }

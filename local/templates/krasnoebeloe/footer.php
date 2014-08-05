@@ -14,7 +14,18 @@ IncludeTemplateLangFile(__FILE__);?>
 			<div class="copy">
 				<a href="renter" class="f-arenda"></a>Все материалы, размещенные на сайте, носят информационный характер и не являются рекламой. <a href="http://personal.krasnoeibeloe.ru/letters" >Вход для сотрудников</a>			</div>
 			<div class="socs">
-				<a href="https://www.facebook.com/krasnoe.beloe" ><img src="/bitrix/templates/.default/img/s-fc.png"  /></a> <a href="https://twitter.com/KrasnoeBeloe" ><img src="http://www.krasnoeibeloe.ru/bitrix/templates/.default/img/s-tw.png"  /></a> <a href="http://vk.com/krasnoebeloe" ><img src="http://www.krasnoeibeloe.ru/bitrix/templates/.default/img/s-vk.png"  /></a> <a href="https://instagram.com/krasnoebeloe" ><img src="http://www.krasnoeibeloe.ru/bitrix/templates/.default/img/s-in.png"  /></a> 			</div>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_TEMPLATE_PATH."/include/socs_menu.php",
+                        "EDIT_TEMPLATE" => ""
+                    ),
+                    false
+                );?>
+
+            </div>
 			<div class="b-err">
 				<a class="btn-pop-err-mail" href="javascript:void(0);">Нашли ошибку? Сообщите нам!</a>
 

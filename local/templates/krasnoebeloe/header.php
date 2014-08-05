@@ -18,7 +18,7 @@ IncludeTemplateLangFile(__FILE__);?>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/reset.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/template_styles.css'); ?>
+    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH.'/css/template_styles.css?2'); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery-1.8.2.min.js'); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/script.js'); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.customfile.js'); ?>
@@ -33,9 +33,7 @@ $(document).ready(function() {
 </script>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.carouFredSel-6.2.1-packed.js'); ?>
 
-
-		<script type="text/javascript" language="javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-	<script>
+<script>
 $(function() {
     $('.slider-spletni').carouFredSel({
 						width: 530,
@@ -52,6 +50,8 @@ $(function() {
 <div class="min-h">
 <div class="over">
 	<div class="he100">
+
+
 	<div class="head-form">
 		<div class="all">
 			<div class="obertka-head">
@@ -148,32 +148,23 @@ else
 		<!--end all-->
 	</div>
 	<!--end head-form-->
-	<div class="menu">
-		<nav>
-
-<ul>
-
-			<li><a href="/address/">магазины</a></li>
-
-			<li><a href="/discount/">дисконтная карта</a></li>
-
-			<li><a href="/actions/gifts/">акции</a></li>
-
-			<li><a href="/services/">услуги</a></li>
-
-			<li><a href="/products/">товары</a></li>
-
-			<li><a href="/events/">event</a></li>
-
-			<li><a href="/renter/">аренда</a></li>
-
-			<li><a href="/about/contacts/">контакты</a></li>
-
-			<li><a href="/about/o-glavnom/">о компании</a></li>
+        <div class="menu">
+    <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
+            "ROOT_MENU_TYPE" => "top",
+            "MENU_CACHE_TYPE" => "A",
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_CACHE_GET_VARS" => "",
+            "MAX_LEVEL" => "1",
+            "CHILD_MENU_TYPE" => "left",
+            "USE_EXT" => "N",
+            "DELAY" => "N",
+            "ALLOW_MULTI_SELECT" => "N",
+        ),
+        false
+    );?>
 
 
-</ul>
-		</nav>
 		<a class="link-open" href="javascript:void(0);">Написать отзыв<span></span></a>
 	</div>
 	<!--end menu-->
@@ -184,9 +175,29 @@ else
 	<div class="lang"><a href="#">in English</a></div>
 	<div class="tel">
 		<span>Единая справочная служба</span>
-<div class="number">8-800-1000-804</div>
+<div class="number">
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:main.include",
+        "",
+        Array(
+            "AREA_FILE_SHOW" => "file",
+            "PATH" => SITE_TEMPLATE_PATH."/include/phone_on_main.php",
+            "EDIT_TEMPLATE" => ""
+        ),
+        false
+    );?>
+</div>
 <div class="txt">
-Звоните с 7.00 до 18.00 (МСК) Звонок бесплатный
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:main.include",
+        "",
+        Array(
+            "AREA_FILE_SHOW" => "file",
+            "PATH" => SITE_TEMPLATE_PATH."/include/timetable.php",
+            "EDIT_TEMPLATE" => ""
+        ),
+        false
+    );?>
 </div><!--end txt-->	</div>
 	</div><!--end container-main-->
 	</div><!--end all2-->

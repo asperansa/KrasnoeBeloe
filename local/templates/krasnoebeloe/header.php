@@ -50,104 +50,67 @@ $(function() {
 <div class="min-h">
 <div class="over">
 	<div class="he100">
+        <div class="head-form">
+            <div class="all">
+                <div class="obertka-head">
+                    <div class="b-form-head">
+                        <div class="title">Уважаемые покупатели!</div>
+                        <a class="close" href="javascript:void(0);"></a>
+                        <div class="form-text">
+                            <p>Наша книга отзывов и предложений создана для того, чтобы Вы могли высказать свои предложения
+                                и замечания, а руководство компании могло использовать их в нашей текущей работе, тем самым
+                                постоянно улучшая качество обслуживания в наших магазинах. </p>
 
-
-	<div class="head-form">
-		<div class="all">
-			<div class="obertka-head">
-				<div class="b-form-head">
-					<div class="title">Уважаемые покупатели!</div>
-					<a class="close" href="javascript:void(0);"></a>
-					<div class="form-text">
-						<p>Наша книга отзывов и предложений создана для того, чтобы Вы могли высказать свои предложения
-	и замечания, а руководство компании могло использовать их в нашей текущей работе, тем самым
-	постоянно улучшая качество обслуживания в наших магазинах. </p>
-
-<p>Обращаем Ваше внимание,
-	что руководство компании рассматривает каждый отзыв
-	или предложение. Для того чтобы
-	мы могли известить Вас о принятых мерах, Вам необходимо оставить контактные данные для
-	обратной связи. </p>					</div>
-					<!--end form-text-->
-					<div id="comp_ee1847624663601eb8c4c6acf58ff0f9">	<div class="form">
-
-<form name="iblockAdd" action="/" method="post" enctype="multipart/form-data"><input type="hidden" name="bxajaxid" id="bxajaxid_ee1847624663601eb8c4c6acf58ff0f9_59772" value="ee1847624663601eb8c4c6acf58ff0f9" /><input type="hidden" name="AJAX_CALL" value="Y" /><script type="text/javascript">
-function _processform_59772(){
-    var obForm = top.BX('bxajaxid_ee1847624663601eb8c4c6acf58ff0f9_59772').form;
-    top.BX.bind(obForm, 'submit', function() {BX.ajax.submitComponentForm(this, 'comp_ee1847624663601eb8c4c6acf58ff0f9', true)});
-    top.BX.removeCustomEvent('onAjaxSuccess', _processform_59772);
-}
-if (top.BX('bxajaxid_ee1847624663601eb8c4c6acf58ff0f9_59772'))
-    _processform_59772();
-else
-    top.BX.addCustomEvent('onAjaxSuccess', _processform_59772);
-</script>
-			<input type="hidden" name="sessid" id="sessid" value="af715b86b8dec751fb5f1d18fc3790c4" />			<table cellspacing="0" cellpadding="0">
-				<tbody>
-				<tr>
-					<th colspan="2" scope="row">
-						<label>Ваш отзыв</label>
-						<textarea name="PROPERTY[13][0]" cols="" rows=""
-						          required="required"></textarea>
-					</th>
-				</tr>
-				<tr>
-					<th scope="row">
-						<label>Имя</label>
-						<input name="PROPERTY[NAME][0]" value="" type="text"
-						       required>
-					</th>
-					<td>
-						<label>Эл. почта</label>
-						<input name="PROPERTY[14][0]"
-						       value=""						       type="email" required>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">
-						<label>Телефон</label>
-						<input name="PROPERTY[15][0]"
-						       value=""						       type="text" required>
-					</th>
-					<td>
-						<label>Прикрепите файл</label>
-						<input type="hidden" name="PROPERTY[16][0]"
-						       value=""/>
-
-						<div class="file"><input class="input-file" type="file" name="PROPERTY_FILE_16_0"></div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">
-						<input type="hidden" name="captcha_sid" value="09ec051347467f1766d313819758a751"/>
-						<label>Защита от автоматического заполнения</label>
-						<input name="captcha_word" type="text"
-						       required >
-					</th>
-					<td>
-						<div class="img-cap">
-							<img class="cap" src="http://www.krasnoeibeloe.ru/bitrix/tools/captcha.php?captcha_sid=09ec051347467f1766d313819758a751">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">
-						<input class="but" name="iblock_submit" type="submit" value="Отправить">
-					</th>
-					<td>&nbsp;</td>
-				</tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
-</div>				</div>
-				<!--end b-head-form-->
-			</div>
-			<!--end obertka-head-->
-		</div>
-		<!--end all-->
-	</div>
-	<!--end head-form-->
+                            <p>Обращаем Ваше внимание,
+                                что руководство компании рассматривает каждый отзыв
+                                или предложение. Для того чтобы
+                                мы могли известить Вас о принятых мерах, Вам необходимо оставить контактные данные для
+                                обратной связи. </p>					</div>
+                        <!--end form-text-->
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:iblock.element.add.form",
+            "feedback",
+            Array(
+                "IBLOCK_TYPE" => "vacancies",
+                "IBLOCK_ID" => "5",
+                "STATUS_NEW" => "NEW",
+                "LIST_URL" => "",
+                "USE_CAPTCHA" => "Y",
+                "USER_MESSAGE_EDIT" => "",
+                "USER_MESSAGE_ADD" => "",
+                "DEFAULT_INPUT_SIZE" => "30",
+                "RESIZE_IMAGES" => "N",
+                "PROPERTY_CODES" => array("10","11","12","NAME","PREVIEW_TEXT"),
+                "PROPERTY_CODES_REQUIRED" => array("10","11","NAME","PREVIEW_TEXT"),
+                "GROUPS" => array("2"),
+                "STATUS" => "ANY",
+                "ELEMENT_ASSOC" => "CREATED_BY",
+                "MAX_USER_ENTRIES" => "100000",
+                "MAX_LEVELS" => "100000",
+                "LEVEL_LAST" => "Y",
+                "MAX_FILE_SIZE" => "0",
+                "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+                "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+                "SEF_MODE" => "N",
+                "AJAX_MODE" => "Y",
+                "CUSTOM_TITLE_NAME" => "Имя",
+                "CUSTOM_TITLE_TAGS" => "",
+                "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+                "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+                "CUSTOM_TITLE_IBLOCK_SECTION" => "",
+                "CUSTOM_TITLE_PREVIEW_TEXT" => "Ваш отзыв",
+                "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+                "CUSTOM_TITLE_DETAIL_TEXT" => "",
+                "CUSTOM_TITLE_DETAIL_PICTURE" => ""
+            )
+        );?> </div>
+                        <!--end b-head-form-->
+                    </div>
+                    <!--end obertka-head-->
+                </div>
+                <!--end all-->
+            </div>
+            <!--end head-form-->
         <div class="menu">
     <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
             "ROOT_MENU_TYPE" => "top",

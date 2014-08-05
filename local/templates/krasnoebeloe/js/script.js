@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    $('.input-file').customFile();
+    $('.slider-spletni').carouFredSel({
+        width: 530,
+        height: 'variable',
+        prev: '#prev3',
+        next: '#next3',
+        auto: false
+    });
    $(".link-open").hover(function(){
 		$(".link-open span").animate({"height" : "42px"});
 	   },

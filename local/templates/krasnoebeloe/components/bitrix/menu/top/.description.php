@@ -5,4 +5,3 @@ $arTemplateDescription = array(
 	"NAME" => GetMessage("MENU_TREE_NAME"),
 	"DESCRIPTION" => GetMessage("MENU_TREE_DESC"),
 );
-?>

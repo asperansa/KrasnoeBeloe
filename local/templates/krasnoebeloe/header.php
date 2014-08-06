@@ -23,8 +23,6 @@ IncludeTemplateLangFile(__FILE__);?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.customfile.js'); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/jquery.carouFredSel-6.2.1-packed.js'); ?>
     <? $APPLICATION->SetAdditionalCSS('http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic'); ?>
-    <?$APPLICATION->ShowMeta("keywords")?>
-    <?$APPLICATION->ShowMeta("description")?>
 </head>
 <body>
 <?$APPLICATION->ShowPanel();?>
@@ -48,43 +46,59 @@ IncludeTemplateLangFile(__FILE__);?>
                                 мы могли известить Вас о принятых мерах, Вам необходимо оставить контактные данные для
                                 обратной связи. </p>					</div>
                         <!--end form-text-->
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:iblock.element.add.form",
-                            "feedback",
-                            Array(
-                                "IBLOCK_TYPE" => "vacancies",
-                                "IBLOCK_ID" => "5",
-                                "STATUS_NEW" => "NEW",
-                                "LIST_URL" => "",
-                                "USE_CAPTCHA" => "Y",
-                                "USER_MESSAGE_EDIT" => "",
-                                "USER_MESSAGE_ADD" => "",
-                                "DEFAULT_INPUT_SIZE" => "30",
-                                "RESIZE_IMAGES" => "N",
-                                "PROPERTY_CODES" => array("10","11","12","NAME","PREVIEW_TEXT"),
-                                "PROPERTY_CODES_REQUIRED" => array("10","11","NAME","PREVIEW_TEXT"),
-                                "GROUPS" => array("2"),
-                                "STATUS" => "ANY",
-                                "ELEMENT_ASSOC" => "CREATED_BY",
-                                "MAX_USER_ENTRIES" => "100000",
-                                "MAX_LEVELS" => "100000",
-                                "LEVEL_LAST" => "Y",
-                                "MAX_FILE_SIZE" => "0",
-                                "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
-                                "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
-                                "SEF_MODE" => "N",
-                                "AJAX_MODE" => "Y",
-                                "CUSTOM_TITLE_NAME" => "Имя",
-                                "CUSTOM_TITLE_TAGS" => "",
-                                "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
-                                "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
-                                "CUSTOM_TITLE_IBLOCK_SECTION" => "",
-                                "CUSTOM_TITLE_PREVIEW_TEXT" => "Ваш отзыв",
-                                "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
-                                "CUSTOM_TITLE_DETAIL_TEXT" => "",
-                                "CUSTOM_TITLE_DETAIL_PICTURE" => ""
-                            )
-                        );?> </div> <!--end b-head-form-->
+                        <? $APPLICATION->IncludeComponent("asperansa:iblock.element.add.form", "feedback", array(
+	"STATUS_NEW" => "NEW",
+	"LIST_URL" => "",
+	"USE_CAPTCHA" => "Y",
+	"USER_MESSAGE_EDIT" => "",
+	"USER_MESSAGE_ADD" => "",
+	"DEFAULT_INPUT_SIZE" => "30",
+	"RESIZE_IMAGES" => "N",
+	"IBLOCK_TYPE" => "vacancies",
+	"IBLOCK_ID" => "5",
+	"PROPERTY_CODES" => array(
+		0 => "NAME",
+		1 => "PREVIEW_TEXT",
+		2 => "10",
+		3 => "11",
+		4 => "12",
+	),
+	"PROPERTY_CODES_REQUIRED" => array(
+		0 => "NAME",
+		1 => "PREVIEW_TEXT",
+		2 => "10",
+		3 => "11",
+	),
+	"GROUPS" => array(
+		0 => "2",
+	),
+	"STATUS" => "ANY",
+	"ELEMENT_ASSOC" => "CREATED_BY",
+	"MAX_USER_ENTRIES" => "100000",
+	"MAX_LEVELS" => "100000",
+	"LEVEL_LAST" => "Y",
+	"MAX_FILE_SIZE" => "0",
+	"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+	"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+	"SEF_MODE" => "N",
+	"SEF_FOLDER" => "/",
+	"AJAX_MODE" => "Y",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CUSTOM_TITLE_NAME" => "Имя",
+	"CUSTOM_TITLE_TAGS" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+	"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+	"CUSTOM_TITLE_PREVIEW_TEXT" => "Ваш отзыв",
+	"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+	"CUSTOM_TITLE_DETAIL_TEXT" => "",
+	"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?> </div> <!--end b-head-form-->
                     </div> <!--end obertka-head-->
                 </div> <!--end all-->
             </div> <!--end head-form-->
